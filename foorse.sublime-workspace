@@ -1,0 +1,362 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sche",
+				"schema_sql"
+			],
+			[
+				"indica",
+				"indicator_count"
+			],
+			[
+				"indi",
+				"indicator_count"
+			],
+			[
+				"ind",
+				"indicator_count"
+			],
+			[
+				"table",
+				"table_title"
+			],
+			[
+				"subindic",
+				"subindicator_names"
+			],
+			[
+				"subindicat",
+				"subindicator_names"
+			],
+			[
+				"subind",
+				"subindicator_names"
+			],
+			[
+				"ai_",
+				"ai_interpet_tags"
+			],
+			[
+				"sub",
+				"subindicator_ids"
+			],
+			[
+				"res",
+				"resp_index"
+			],
+			[
+				"indicator",
+				"indicators_column_count"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"marg",
+				"margin-right"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pretty",
+				"Pretty JSON: Format JSON Lines"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/ilya101010/devel/VPOparsing/conversion.log",
+		"/home/ilya101010/devel/VPOparsing/parse_mongo.py",
+		"/home/ilya101010/devel/VPOparsing/converter3.sh",
+		"/home/ilya101010/devel/VPOparsing/bin/openai",
+		"/home/ilya101010/devel/VPOparsing/app.log",
+		"/home/ilya101010/devel/VPOparsing/html_current_2.py",
+		"/home/ilya101010/devel/VPOparsing/html_filler.py",
+		"/home/ilya101010/devel/VPOparsing/html_filler_old2.py",
+		"/home/ilya101010/devel/VPOparsing/out",
+		"/home/ilya101010/devel/VPOparsing/prompt.md",
+		"/home/ilya101010/devel/guybot/picker5.py",
+		"/home/ilya101010/devel/VPOparsing/converter2.sh",
+		"/home/ilya101010/devel/foorse/utils/file_utils.py",
+		"/home/ilya101010/devel/foorse/requirements.txt",
+		"/home/ilya101010/devel/foorse/readme.md",
+		"/home/ilya101010/devel/foorse/database/db_utils.py",
+		"/home/ilya101010/devel/foorse/logger.py",
+		"/home/ilya101010/devel/foorse/config_example.py",
+		"/home/ilya101010/devel/foorse/main.py",
+		"/home/ilya101010/devel/VPOparsing/html_schema.sql",
+		"/home/ilya101010/devel/VPOparsing/converter.sh",
+		"/home/ilya101010/devel/VPOparsing/г.Москва_ГОС_Очная.html",
+		"/home/ilya101010/devel/foorse/ai/ai_utils.py",
+		"/home/ilya101010/devel/foorse/config.py",
+		"/home/ilya101010/.config/waybar/config",
+		"/home/ilya101010/.config/waybar/style.css",
+		"/home/ilya101010/.config/hypr/hyprland.conf",
+		"/home/ilya101010/devel/guybot/tg_download/result.json",
+		"/home/ilya101010/devel/VPOparsing/html_filler_old.py",
+		"/home/ilya101010/Downloads/Выявлено лиц, совершивших преступления.xml",
+		"/home/ilya101010/devel/coda/Протокол заседания МКИ от 25.11.2014.html",
+		"/home/ilya101010/devel/coda/Первый устав МКИ (январь 2008).html",
+		"/home/ilya101010/devel/coda/Дополнительный стипендиальный фонд ~2011.html",
+		"/home/ilya101010/devel/coda/“Осень политической жиpни” (статья За Науку) от 12.10.2001.html",
+		"/home/ilya101010/devel/coda/“Представительная власть на Физтехе” (статья За Науку) от 08.05.2001.html",
+		"/home/ilya101010/devel/coda/Отчёт о работе МКИ за 2020-21 год.html",
+		"/home/ilya101010/devel/coda/column_data.json",
+		"/home/ilya101010/devel/coda/rows_data.json",
+		"/home/ilya101010/devel/meme.py",
+		"/home/ilya101010/devel/coda/coda_gpt_download.py",
+		"/home/ilya101010/Downloads/result.json",
+		"/home/ilya101010/devel/guybot/test.py",
+		"/home/ilya101010/devel/moti/motivation.py",
+		"/home/ilya101010/devel/guybot/dddddd2",
+		"/home/ilya101010/devel/guybot/scraper.py",
+		"/home/ilya101010/devel/guybot/ggg.py",
+		"/home/ilya101010/devel/guybot/output.jsonl",
+		"/home/ilya101010/devel/guybot/prompt.txt",
+		"/home/ilya101010/devel/guybot/picker4.py",
+		"/home/ilya101010/devel/guybot/picker3.py",
+		"/home/ilya101010/devel/guybot/picker2.py",
+		"/home/ilya101010/devel/guybot/picker.py",
+		"/home/ilya101010/devel/guybot/test3.py",
+		"/home/ilya101010/devel/guybot/test4.py",
+		"/home/ilya101010/devel/rosstat.cpp",
+		"/home/ilya101010/devel/VPOparsing/vpo1.json",
+		"/home/ilya101010/devel/guybot/gigachat.py",
+		"/home/ilya101010/devel/guybot/test2.py",
+		"/home/ilya101010/devel/motivation.py",
+		"/home/ilya101010/devel/coda/script.log",
+		"/home/ilya101010/.config",
+		"/home/ilya101010/devel/rosstat.c",
+		"/opt/vivaldi/resources/vivaldi/menus/mainmenu.json",
+		"/opt/vivaldi/resources/vivaldi/devtools.html",
+		"/home/ilya101010/.conkyrc",
+		"/home/ilya101010/.config/vivaldi/custom_css/mod.css",
+		"/opt/vivaldi/resources/vivaldi/background-service-worker-36e3f26d70a496e0f848cc3eab5ed8f9.js",
+		"/opt/vivaldi/resources/vivaldi/bundle.js",
+		"/opt/vivaldi/resources/vivaldi/features.json",
+		"/opt/vivaldi/resources/vivaldi/main.html",
+		"/home/ilya101010/.config/hypr/hyprpaper.conf",
+		"/home/ilya101010/.config/dunst/dunstrc",
+		"/home/ilya101010/devel/vivaldi.js",
+		"/opt/vivaldi/resources/vivaldi/components/welcome/welcome.html",
+		"/opt/vivaldi/resources/vivaldi/bundle-mailreader-worker.js",
+		"/opt/vivaldi/resources/vivaldi/components/mail/mail.html",
+		"/opt/vivaldi/resources/vivaldi/style/common.js",
+		"/opt/vivaldi/resources/vivaldi/window.html",
+		"/opt/vivaldi/locales/be.pak",
+		"/home/ilya101010/devel/openai_fun/demo.py",
+		"/home/ilya101010/.config/vivaldi/search_engines.json",
+		"/home/ilya101010/.config/vivaldi/Dictionaries/ru-RU-3-0.bdic",
+		"/run/user/1000/gvfs/ftp:host=ftp.zakupki.gov.ru/_readme.txt",
+		"/home/ilya101010/devel/gigachat_fun/SocraticAI/AliceBobCindy.py",
+		"/home/ilya101010/devel/gigachat_fun/SocraticAI/app.py",
+		"/home/ilya101010/devel/VPOparsing/form_description_result.json",
+		"/home/ilya101010/devel/gigachat_fun/SocraticAI/requirements.txt",
+		"/home/ilya101010/devel/VPOparsing/demo.json",
+		"/home/ilya101010/devel/VPOparsing/fix_form_desc.py",
+		"/home/ilya101010/devel/VPOparsing/generate_form_desc.py",
+		"/home/ilya101010/devel/VPOparsing/parse_mongo_better.py",
+		"/home/ilya101010/devel/budgets.csv",
+		"/home/ilya101010/devel/VPOparsing/waffle/readme.md",
+		"/home/ilya101010/devel/VPOparsing/gigachat.ipynb",
+		"/home/ilya101010/devel/VPOparsing/vpo_1_spec.json",
+		"/home/ilya101010/devel/VPOparsing/prompt_descriptions.txt",
+		"/home/ilya101010/devel/VPOparsing/prompt.txt",
+		"/home/ilya101010/devel/VPOparsing/gpt_optimize.sql",
+		"/home/ilya101010/olymp/table_funcs.R",
+		"/home/ilya101010/olymp/report_uni.R",
+		"/home/ilya101010/olymp/reportgen_old.R",
+		"/home/ilya101010/olymp/reportgen.R",
+		"/home/ilya101010/olymp/report_fac.R",
+		"/home/ilya101010/olymp/report_excel.R",
+		"/home/ilya101010/olymp/load_everything.R",
+		"/home/ilya101010/.config/Nickvision Tagger/config.json",
+		"/home/ilya101010/olymp/envsetup.R",
+		"/home/ilya101010/devel/VPOparsing/schema.sql",
+		"/home/ilya101010/mongo/journal/WiredTigerLog.0000000002",
+		"/home/ilya101010/devel/VPOparsing/parse.py",
+		"/home/ilya101010/devel/database.db-journal",
+		"/home/ilya101010/devel/VPOparsing/database.db-journal",
+		"/home/ilya101010/devel/VPOparsing/output.json",
+		"/home/ilya101010/devel/rucola/tailwind.config.ts",
+		"/home/ilya101010/devel/rucola/src/app/globals.css",
+		"/home/ilya101010/devel/rucola/src/app/layout.tsx",
+		"/home/ilya101010/devel/parchment/src/Parchment.jsx",
+		"/home/ilya101010/devel/parchment/src/index.jsx",
+		"/home/ilya101010/devel/rucola/next.config.js",
+		"/home/ilya101010/Documents/vidnoe_zavuch.md",
+		"/home/ilya101010/devel/rucola/src/app/page.tsx",
+		"/home/ilya101010/prompt_interview.txt",
+		"/home/ilya101010/prompt.txt",
+		"/home/ilya101010/interview.txt",
+		"/home/ilya101010/Downloads/Лопатино учитель.txt",
+		"/home/ilya101010/Documents/vidnoe_adminka.md",
+		"/home/ilya101010/Documents/vidnoe_kids_1f.md",
+		"/home/ilya101010/Documents/zhanetta_reutov_transcript.md"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "foorse.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
