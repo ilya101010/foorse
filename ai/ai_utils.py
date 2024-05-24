@@ -7,7 +7,7 @@ oaiclient = OpenAI(api_key=openai_api_key, base_url=base_url)
 
 def ai_title_id(table_tags):
     response = oaiclient.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o",
         messages=[
         {"role": "system", "content":  """
             Тебе будет дан набор тегов для статистической таблицы. Среди этих тегов есть название этой таблицы. Тебе нужно выбрать ОДИН тег, который лучше всех подходит как название для данной таблицы, и вывести его номер. Выведи в формате JSON, как в примере внизу.
@@ -65,7 +65,6 @@ def ai_indicator_count(table_title, subindicator_names):
     return json.loads(ai_response)['indicator_count']
 
 def ai_description(table_title, subindicator_names, statform, indicator_names):
-    return "TBA"
     def random_sample(array, n):
         return array if n >= len(array) else random.sample(array, n)
 
@@ -73,8 +72,6 @@ def ai_description(table_title, subindicator_names, statform, indicator_names):
                 Название таблицы: '{table_title}'
                 Название столбцов:\n{'\n'.join([f'{i}: \'{v}\'' for i, v in enumerate(subindicator_names)])}
                 Название семи случайных строк: {'\n'.join([f'- \'{i}\'' for i in random_sample(indicator_names, 7)])}"""
-
-    print(ourcontent)
 
     response = oaiclient.chat.completions.create(
         model="gpt-4o",

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-input_folder="1pk_new2022"
-output_folder="1pk_new2022_html"
+input_folder="input/1_NK_2023"
+output_folder="output/1_NK_2023"
 log_file="conversion.log"
 error_file="conversion_errors.log"
 

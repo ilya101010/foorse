@@ -85,8 +85,8 @@ def process_html_file(file_path, db_path, ref_file=False, ref={}, statform='<Ð¿Ð
             refr[table_title] = {"indicator_count": indicator_count, "description": description, "table_std_id": table_std_id}
 
         try:
-            print(f"T1 {ref.keys()}")
-            print(f"T2 {table_tags}")
+            # print(f"T1 {ref.keys()}")
+            # print(f"T2 {table_tags}")
             table_title = list(set(ref.keys()) & set(table_tags))[0]
             indicator_count = refr[table_title]['indicator_count']
             table_std_id = refr[table_title]['table_std_id']
