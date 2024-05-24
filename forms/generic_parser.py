@@ -14,7 +14,6 @@ class GenericParser(InterfaceParser):
         """Returns (tag_row_count, [tags]) from header"""
         find_first = lambda search_string: next((index for index, row in self.table.iterrows() if row.astype(str).str.contains(search_string).any()), 10000)
         self.header_bottom = min(find_first("№ строки"), find_first("Наименование"))
-        print(self.header_bottom)
         for i in range(5):
             if isinstance(self.table.iloc[0, i], str):
                 table_tags = list(self.table.iloc[0:self.header_bottom, i])
@@ -39,4 +38,4 @@ class GenericParser(InterfaceParser):
         return self.table.iloc[self.subindicator_bottom+1:,0:self.indicator_count].values.tolist()
     
     def retrieve_values(self):
-        return self.table.iloc[self.subindicator_bottom+1:, self.indicator_count:len(self.subindicators)]
+        return self.table.iloc[self.subindicator_bottom+1:, self.indicator_count:len(self.subindicators)].reset_index(drop = True)

@@ -3,8 +3,10 @@ import pandas as pd
 
 class InterfaceParser(ABC):
 	"""
-	Interface class for form parsers.
+	Interface class for form parsers. Reference object has the following format:
+	{"table title tag": {"indicator_count": 2, "description": "TBA"}}
 	"""
+
 	@abstractmethod
 	def __init__(self, table: pd.DataFrame,
 		generate_title_id = lambda tags: 1,
@@ -12,7 +14,7 @@ class InterfaceParser(ABC):
 		generate_description = lambda title, subindicator_names, statform, indicator_names: "TBA",
 		reference = None):
 		self.table = table
-
+		self.statform = '-'
 		if reference is None:
 			# we're dealing with THE reference file
 			self.reference_file = True
@@ -25,12 +27,22 @@ class InterfaceParser(ABC):
 		self.subindicator_row_count, self.subindicators = self.retrieve_subindicators()
 		self.subindicator_names = list(map(lambda x: ' > '.join((map(str, x))), self.subindicators))
 		# voodoo magic - 1
-		self.tags_title_id = generate_title_id(self.tags)
+		if self.reference_file:
+			self.tags_title_id = generate_title_id(self.tags)
+		else:
+			titles = reference.keys()
+			self.tags_title_id = next((index for index, element in
+							  enumerate(self.tags) if element in titles), None)
 		self.title = self.tags[self.tags_title_id]
-		self.indicator_count = generate_indicator_count(self.title, self.subindicator_names)
+		if self.reference_file:
+			self.indicator_count = generate_indicator_count(self.title, self.subindicator_names)
+		else:
+			self.indicator_count = self.reference[self.title]['indicator_count']
 		# retrieve indicators
 		self.indicators = self.retrieve_indicators()
+		self.indicator_names = list(map(lambda x: ' / '.join((map(str, x))), self.indicators))
 		self.raw_values = self.retrieve_values()
+		self.description = generate_description(self.title, self.subindicator_names, self.statform, self.indicator_names)
 
 	@abstractmethod
 	def retrieve_tags(self):

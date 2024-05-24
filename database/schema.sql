@@ -11,11 +11,13 @@ CREATE TABLE tags (
 -- Create table standards
 CREATE TABLE table_std (
     table_std_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    table_title_tag_id INTEGER NOT NULL,
+    table_title_tag_id INTEGER NOT NULL UNIQUE,
     description TEXT, -- created using OpenAI probably based on data
     indicator_count INTEGER DEFAULT 2,
     FOREIGN KEY (table_title_tag_id) REFERENCES tags(tag_id)
 );
+
+-- Create tables table
 
 CREATE TABLE tables (
     table_id INTEGER PRIMARY KEY AUTOINCREMENT,
