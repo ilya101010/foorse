@@ -12,9 +12,10 @@ class InterfaceParser(ABC):
 		generate_title_id = lambda tags: 1,
 		generate_indicator_count = lambda title, subindicator_names: 2,
 		generate_description = lambda title, subindicator_names, statform, indicator_names: "TBA",
-		reference = None):
+		reference = None,
+		statform = "-"):
 		self.table = table
-		self.statform = '-'
+		self.statform = statform
 		if reference is None:
 			# we're dealing with THE reference file
 			self.reference_file = True

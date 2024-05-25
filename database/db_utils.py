@@ -47,12 +47,10 @@ def process_html_file(file_path, db_path, ref_file = False, ref = None, statform
 		if ref_file:
 			parser = GenericParser(df, generate_title_id = ai.ai_title_id,
 				generate_indicator_count = ai.ai_indicator_count,
-				generate_description = ai.ai_description,
 				reference = ref)
 			logger.info(f'Parsed a table using GenericParser')
 			logger.info(f'AI detected title: {parser.title}')
 			logger.info(f'AI detected indicator_count: {parser.indicator_count}')
-			logger.info(f'AI generated description: {parser.description}')
 		else:
 			parser = GenericParser(df, reference = ref)
 
@@ -107,7 +105,7 @@ def process_html_file(file_path, db_path, ref_file = False, ref = None, statform
 			cursor.execute("SELECT indicator_id FROM indicators WHERE indicator_name = ?", (indicator_name,))
 			indicator_id = cursor.fetchone()
 			if not indicator_id:
-				cursor.execute("INSERT INTO indicators (indicator_name) VALUES (?)", [indicator_name])
+				cursor.execute("INSERT INTO indicators (indicator_name, table_std_id) VALUES (?, ?)", [indicator_name, table_std_id])
 				indicator_id = cursor.lastrowid
 			else:
 				indicator_id = indicator_id[0]
@@ -116,11 +114,11 @@ def process_html_file(file_path, db_path, ref_file = False, ref = None, statform
 		# subindicator DB handling
 		subindicator_ids = []
 		for subindicator in parser.subindicators:
-			subindicator_name = ' / '.join(map(str, indicator))
+			subindicator_name = ' / '.join(map(str, subindicator))
 			cursor.execute("SELECT subindicator_id FROM subindicators WHERE subindicator_name = ?", (subindicator_name,))
 			subindicator_id = cursor.fetchone()
 			if not subindicator_id:
-				cursor.execute("INSERT INTO subindicators (subindicator_name) VALUES (?)", [subindicator_name])
+				cursor.execute("INSERT INTO subindicators (subindicator_name, table_std_id) VALUES (?, ?)", [subindicator_name, table_std_id])
 				subindicator_id = cursor.lastrowid
 			else:
 				subindicator_id = subindicator_id[0]
@@ -128,10 +126,10 @@ def process_html_file(file_path, db_path, ref_file = False, ref = None, statform
 
 		# values DB handling
 		data_values = []
-		for i, row in parser.raw_values.iterrows():
+		for i, row in enumerate(parser.raw_values):
 			for j, value in enumerate(row):
 				if isinstance(value, str) or not math.isnan(value):
-					data_values.append((table_id, indicator_ids[i], subindicator_ids[j], value))
+					data_values.append((table_id, indicator_ids[i], subindicator_ids[j + parser.indicator_count], value))
 		cursor.executemany("INSERT INTO data (table_id, indicator_id, subindicator_id, value) VALUES (?, ?, ?, ?)", data_values)
 
 		conn.commit()

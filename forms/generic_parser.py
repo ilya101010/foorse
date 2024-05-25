@@ -6,8 +6,9 @@ class GenericParser(InterfaceParser):
 		generate_title_id = lambda tags: 1,
 		generate_indicator_count = lambda title, subindicator_names: 2,
 		generate_description = lambda title, subindicator_names, statform, indicator_names: "TBA",
-		reference = None):
-        super().__init__(table, generate_title_id, generate_indicator_count, generate_description, reference)
+		reference = None,
+        statform = "-"):
+        super().__init__(table, generate_title_id, generate_indicator_count, generate_description, reference, statform)
         pass
 
     def retrieve_tags(self):
@@ -38,4 +39,4 @@ class GenericParser(InterfaceParser):
         return self.table.iloc[self.subindicator_bottom+1:,0:self.indicator_count].values.tolist()
     
     def retrieve_values(self):
-        return self.table.iloc[self.subindicator_bottom+1:, self.indicator_count:len(self.subindicators)].reset_index(drop = True)
+        return self.table.iloc[self.subindicator_bottom+1:, self.indicator_count:len(self.subindicators)].reset_index(drop = True).values.tolist()

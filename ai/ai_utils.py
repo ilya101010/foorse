@@ -33,7 +33,6 @@ def ai_title_id(table_tags):
     return json.loads(ai_response)['title_id']
 
 def ai_indicator_count(table_title, subindicator_names):
-    return 2
     response = oaiclient.chat.completions.create(
         model="gpt-4o",
         messages=[

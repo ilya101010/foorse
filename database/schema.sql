@@ -31,15 +31,19 @@ CREATE TABLE tables (
 -- Create indicators table
 CREATE TABLE indicators (
     indicator_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    indicator_name TEXT NOT NULL, -- indicator parts are seperated with " / "
-    description TEXT  -- created using OpenAI probably based on data
+    table_std_id INTEGER NOT NULL,
+    indicator_name TEXT NOT NULL, -- indicator parts are seperated with " / ",
+    description TEXT,  -- created using OpenAI probably based on data
+    FOREIGN KEY (table_std_id) REFERENCES table_std(table_std_id)
 );
 
 -- Create subindicators table
 CREATE TABLE subindicators (
     subindicator_id INTEGER PRIMARY KEY AUTOINCREMENT,
     subindicator_name TEXT NOT NULL, -- subindicator hierarchical parts are seperated with " > "
-    description TEXT -- created using OpenAI based on our data
+    table_std_id INTEGER NOT NULL,
+    description TEXT, -- created using OpenAI based on our data
+    FOREIGN KEY (table_std_id) REFERENCES table_std(table_std_id)
 );
 
 -- Create values table
