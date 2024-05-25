@@ -2,6 +2,8 @@
 
 **foorse** is a tool designed to help researchers parse Russian government statistical forms about education, particularly forms like ВПО-1 (higher education), СПО-1 (professional education), and 1-ПК (additional education), etc. The tool automates the extraction, analysis, and storage of statistical data from HTML files into a structured SQLite database, leveraging AI for enhanced data interpretation.
 
+This project is supported by [Laboratory for University Development](https://uni.hse.ru) of [HSE Institute of Education](https://ioe.hse.ru).
+
 If you're planning to use this code for some other forms, it might require some tinkering with the code ;)
 
 ## Features
