@@ -114,7 +114,7 @@ def process_html_file(file_path, db_path, ref_file = False, ref = None, statform
 		# subindicator DB handling
 		subindicator_ids = []
 		for subindicator in parser.subindicators:
-			subindicator_name = ' / '.join(map(str, subindicator))
+			subindicator_name = ' > '.join(map(str, subindicator))
 			cursor.execute("SELECT subindicator_id FROM subindicators WHERE subindicator_name = ?", (subindicator_name,))
 			subindicator_id = cursor.fetchone()
 			if not subindicator_id:
