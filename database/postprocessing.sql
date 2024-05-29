@@ -28,6 +28,6 @@ SELECT region, taglist as tags, indicator_name as indicator, subindicator_name a
 	WHERE tables.table_std_id = 7;
 
 CREATE TABLE regions AS
-	SELECT table_id, tag_name AS region FROM table_tags
+	SELECT table_id, tag_name AS region, tag_id FROM table_tags
 	LEFT JOIN tags ON table_tags.tag_id = tags.tag_id
 	WHERE tags.tag_type = 'region';

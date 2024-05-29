@@ -14,7 +14,7 @@ class InterfaceParser(ABC):
 		generate_description = lambda title, subindicator_names, statform, indicator_names: "TBA",
 		reference = None,
 		statform = "-"):
-		self.table = table
+		self.table = table.replace('', float('NaN')).dropna(how='all').dropna(axis=1, how='all')
 		self.statform = statform
 		if reference is None:
 			# we're dealing with THE reference file

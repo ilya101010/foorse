@@ -1,7 +1,7 @@
 #!/bin/bash
 
-input_folder="input/1_NK_2023"
-output_folder="output/1_NK_2023"
+input_folder="input/"
+output_folder="output/"
 log_file="conversion.log"
 error_file="conversion_errors.log"
 
@@ -23,13 +23,13 @@ convert_file() {
 }
 
 # Count the total number of .xls files
-total_files=$(find "$input_folder" -type f -name '*.xlsx' | wc -l)
+total_files=$(find "$input_folder" -type f -name '*.xls' | wc -l)
 
 # Initialize the counter
 counter=0
 
 # Find all .xls files and process them sequentially with a progress counter
-find "$input_folder" -type f -name '*.xlsx' | while read -r xls_file; do
+find "$input_folder" -type f -name '*.xls' | while read -r xls_file; do
     counter=$((counter + 1))
     echo "Processing file $counter of $total_files: $xls_file"
     convert_file "$xls_file"

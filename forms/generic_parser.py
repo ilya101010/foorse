@@ -27,7 +27,7 @@ class GenericParser(InterfaceParser):
             cleaned_list = [str(v) if isinstance(v, float) else v for v in lst]
             return [v for i, v in enumerate(cleaned_list) if i == 0 or v != cleaned_list[i - 1]]
 
-        self.subindicator_bottom = next((i for i, value in enumerate(self.table.iloc[:, 0]) if value == '1'), 0)
+        self.subindicator_bottom = next((i for i, value in enumerate(self.table.iloc[:, 0]) if (value == '1') or (value == 1) or (value == 1.0)), 0)
         subindicators_df = self.table.iloc[self.header_bottom:self.subindicator_bottom+1]
         subindicators_df = subindicators_df.replace('', float('NaN')).dropna(axis=1, how='all')
         subindicators = [fix(subindicators_df[col].tolist()) for col in subindicators_df.columns]

@@ -6,6 +6,7 @@ from config import openai_api_key, base_url
 oaiclient = OpenAI(api_key=openai_api_key, base_url=base_url)
 
 def ai_title_id(table_tags):
+    content = '\n'.join([f'{i}: \'{v}\'' for i, v in enumerate(table_tags)])
     response = oaiclient.chat.completions.create(
         model="gpt-4o",
         messages=[
@@ -23,16 +24,19 @@ def ai_title_id(table_tags):
 
             Вывод: {"title_id": 4}
         """},
-        {"role": "user", "content": '\n'.join([f'{i}: \'{v}\'' for i, v in enumerate(table_tags)])}
+        {"role": "user", "content": content}
         ],
         n=1,
         temperature=0,
         response_format={ "type": "json_object" }
     )
     ai_response = response.choices[0].message.content
+    print('TI1 ' + content)
+    print('TI2 ' + ai_response)
     return json.loads(ai_response)['title_id']
 
 def ai_indicator_count(table_title, subindicator_names):
+    content = f'Название таблицы: {table_title}\n Название столбцов:\n' + '\n'.join([f'{i}: \'{v}\'' for i, v in enumerate(subindicator_names)])
     response = oaiclient.chat.completions.create(
         model="gpt-4o",
         messages=[
@@ -54,13 +58,15 @@ def ai_indicator_count(table_title, subindicator_names):
 
             Ещё раз: величина показатея не входит в indicator_count, а всегда включай номер строки в indicator_count!!!
         """},
-        {"role": "user", "content": f'Название таблицы: {table_title}\n Название столбцов:\n' + '\n'.join([f'{i}: \'{v}\'' for i, v in enumerate(subindicator_names)])}
+        {"role": "user", "content": content}
         ],
         n=1,
         temperature=0,
         response_format={ "type": "json_object" }
     )
     ai_response = response.choices[0].message.content
+    print('IC1 ' + content)
+    print('IC2 ' + ai_response)
     return json.loads(ai_response)['indicator_count']
 
 def ai_description(table_title, subindicator_names, statform, indicator_names):
