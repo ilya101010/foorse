@@ -36,7 +36,14 @@ def main():
 
     for file_path in track(html_files, description="Processing HTML files"):
         logger.info(f"Processing {file_path}")
-        process_excel_file(file_path, db_path, ref=ref_result)
+        try:
+            process_excel_file(file_path, db_path, ref=ref_result)
+        except BaseException as e:
+            logger.error(f'I\'ve encountered an error: {str(e)}')
+            logger.error(f'Failed processing {file_path}')
+            continue
+        else:
+            logger.info(f'Success processing {file_path}')
 
     logger.info("All files processed.")
 

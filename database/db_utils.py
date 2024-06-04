@@ -103,7 +103,7 @@ def process_html_file(file_path, db_path, ref_file = False, ref = None, statform
 		indicator_ids = []
 		for indicator in parser.indicators:
 			indicator_name = ' / '.join(map(str, indicator))
-			cursor.execute("SELECT indicator_id FROM indicators WHERE indicator_name = ?", (indicator_name,))
+			cursor.execute("SELECT indicator_id FROM indicators WHERE indicator_name = ? AND table_std_id = ?", (indicator_name, table_std_id, ))
 			indicator_id = cursor.fetchone()
 			if not indicator_id:
 				cursor.execute("INSERT INTO indicators (indicator_name, table_std_id) VALUES (?, ?)", [indicator_name, table_std_id])
@@ -116,7 +116,7 @@ def process_html_file(file_path, db_path, ref_file = False, ref = None, statform
 		subindicator_ids = []
 		for subindicator in parser.subindicators:
 			subindicator_name = ' > '.join(map(str, subindicator))
-			cursor.execute("SELECT subindicator_id FROM subindicators WHERE subindicator_name = ?", (subindicator_name,))
+			cursor.execute("SELECT subindicator_id FROM subindicators WHERE subindicator_name = ? AND table_std_id = ?", (subindicator_name, table_std_id, ))
 			subindicator_id = cursor.fetchone()
 			if not subindicator_id:
 				cursor.execute("INSERT INTO subindicators (subindicator_name, table_std_id) VALUES (?, ?)", [subindicator_name, table_std_id])

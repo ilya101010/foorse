@@ -1,3 +1,10 @@
+UPDATE tags
+SET tag_type = 'title'
+WHERE tag_id IN (
+    SELECT table_title_tag_id
+    FROM table_std
+);
+
 SELECT * FROM data
 INNER JOIN tables ON tables.table_id = data.table_id
 WHERE tables.table_std_id = 1;
@@ -19,6 +26,11 @@ SELECT table_id, group_concat(tag_name, '; ') AS taglist FROM table_tags
 	WHERE tags.tag_type = 'filter'
 	GROUP BY table_id;
 
+CREATE TABLE regions AS
+	SELECT table_id, tag_name AS region, tags.tag_id FROM table_tags
+	LEFT JOIN tags ON table_tags.tag_id = tags.tag_id
+	WHERE tags.tag_type = 'region';
+
 SELECT region, taglist as tags, indicator_name as indicator, subindicator_name as subindicator, value FROM data
 	INNER JOIN tables ON tables.table_id = data.table_id
 	INNER JOIN taglists ON tables.table_id = taglists.table_id
@@ -27,7 +39,3 @@ SELECT region, taglist as tags, indicator_name as indicator, subindicator_name a
 	INNER JOIN subindicators on data.subindicator_id = subindicators.subindicator_id
 	WHERE tables.table_std_id = 7;
 
-CREATE TABLE regions AS
-	SELECT table_id, tag_name AS region, tag_id FROM table_tags
-	LEFT JOIN tags ON table_tags.tag_id = tags.tag_id
-	WHERE tags.tag_type = 'region';

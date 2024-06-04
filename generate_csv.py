@@ -1,7 +1,7 @@
 import pandas as pd
 import sqlite3
 import re
-conn = sqlite3.connect("vpo1.db")
+conn = sqlite3.connect("spo1_2023_full.db")
 
 table_titles = {x[0]: x[1] for x in pd.read_sql("SELECT table_std_id, tags.tag_name FROM table_std INNER JOIN tags ON table_std.table_title_tag_id = tags.tag_id", conn).values.tolist()}
 
@@ -39,6 +39,6 @@ for table_std_id, title in table_titles.items():
     # Rearrange DataFrame
     tbl = tbl[new_column_order]
     
-    tbl.to_csv('tsv/'+filename, sep='\t')
+    tbl.to_csv('tsv/spo1/2023/'+filename, sep='\t')
 
 conn.close()
