@@ -15,7 +15,7 @@ class GenericParser(InterfaceParser):
         """Returns (tag_row_count, [tags]) from header"""
         find_first = lambda search_string: next((index for index, row in self.table.iterrows() if row.astype(str).str.contains(search_string).any()), 10000)
         self.header_bottom = min(find_first("№ строки"), find_first("Наименование"))
-        for i in range(5):
+        for i in range(5): # 5 is just a number
             if isinstance(self.table.iloc[0, i], str):
                 table_tags = list(self.table.iloc[0:self.header_bottom, i])
                 break

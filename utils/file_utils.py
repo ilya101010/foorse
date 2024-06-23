@@ -12,8 +12,8 @@ def get_excel_files(directory):
     # Use rglob to find both .xlsx and .xls files
     return list(Path(directory).rglob("*.xlsx")) + list(Path(directory).rglob("*.xls"))
 
-def pick_reference_file(html_files):
-    return max(html_files, key=os.path.getsize)
+def pick_reference_file(files):
+    return max(files, key=os.path.getsize)
 
 def read_xls_to_dataframe(file_path):
     # Open the workbook
